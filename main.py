@@ -5,6 +5,10 @@ app = Flask(__name__)
 
 todos = ['Lau', 'San', 'Cata', 'Simi', '???']
 
+@app.errorhandler
+def not_found(error):
+    return render_template('404.html', error=error)
+
 @app.route('/')
 def index():
     user_ip = request.remote_addr
