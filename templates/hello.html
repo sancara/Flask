@@ -1,7 +1,9 @@
-{% extends 'base.html' %} {% import 'macros.html' as macros %} {% block title %}
-{{ super() }} Bienvenido {% endblock %} {% block content %} {% if user_ip %} {%
-import 'bootstrap/wtf.html' as wtf %}
-<h1>Hello world Platzi! Tu ip es {{ user_ip }}</h1>
+{% extends 'base.html' %} {% import 'macros.html' as macros %} {% import
+'bootstrap/wtf.html' as wtf %} {% block title %} {{ super() }} Bienvenido {%
+endblock %} {% block content %} {% if username %}
+<h1>Hola {{ username.title() }}</h1>
+{% endif %} {% if user_ip %}
+<h3>Tu IP es {{ user_ip }}</h3>
 {% else %}
 <a href="{{ url_for('index') }}">Ir al inicio</a>
 {% endif %}
