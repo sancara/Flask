@@ -1,15 +1,17 @@
 {% extends 'base.html' %} {% import 'macros.html' as macros %} {% block title %}
-{{ super() }} Bienvenido {% endblock %} {% block content %} {% if user_ip %}
+{{ super() }} Bienvenido {% endblock %} {% block content %} {% if user_ip %} {%
+import 'bootstrap/wtf.html' as wtf %}
 <h1>Hello world Platzi! Tu ip es {{ user_ip }}</h1>
 {% else %}
 <a href="{{ url_for('index') }}">Ir al inicio</a>
 {% endif %}
 
 <div class="container">
-  <form action="{{ url_for('hello') }}" method="post">
-    {{ login.username }} {{ login.username.label }} {{ login.password }} {{
-    login.password.label }} {{ login.submit }}
-  </form>
+  <!-- <form action="{{ url_for('hello') }}" method="post">
+    {{ login1.username }} {{ login1.username.label }} {{ login1.password }} {{
+    login1.password.label }} {{ login1.submit }}
+  </form> -->
+  {{ wtf.quick_form(login1) }}
 </div>
 
 <ul>

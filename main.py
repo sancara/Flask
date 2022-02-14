@@ -41,7 +41,7 @@ def hello():
     context = {
         'user_ip': user_ip,
         'todos': todos,
-        'login': login_form
+        'login1': login_form
     }
     #al pasar el **kwarg es como pasar las variables 1 por 1
     #pudiendo acceder a ellas directamente,
