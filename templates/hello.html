@@ -5,6 +5,13 @@
 <a href="{{ url_for('index') }}">Ir al inicio</a>
 {% endif %}
 
+<div class="container">
+  <form action="{{ url_for('hello') }}" method="post">
+    {{ login.username }} {{ login.username.label }} {{ login.password }} {{
+    login.password.label }} {{ login.submit }}
+  </form>
+</div>
+
 <ul>
   {% for todo in todos %} {{ macros.integrantes(todo) }} {% endfor %}
 </ul>
