@@ -1,4 +1,5 @@
-{% if user_ip %}
+{% extends 'base.html' %} {% block title %} {{ super() }} Bienvenido {% endblock
+%} {% block content %} {% if user_ip %}
 <h1>Hello world Platzi! Tu ip es {{ user_ip }}</h1>
 {% else %}
 <a href="{{ url_for('index') }}">Ir al inicio</a>
@@ -9,3 +10,5 @@
   <li>{{ todo }}</li>
   {% endfor %}
 </ul>
+
+{% endblock %}
