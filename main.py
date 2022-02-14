@@ -10,7 +10,7 @@ todos = ['Lau', 'San', 'Cata', 'Simi', '???']
 def not_found(error):
     return render_template('404.html', error=error)
 
-@app.error_handler(500)
+@app.errorhandler(500)
 def server_error(error):
     return render_template('500.html', error=error)
 
